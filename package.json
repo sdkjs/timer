@@ -1,0 +1,15 @@
+{
+  "name": "task-timer",
+  "description": "a human oriented timer for javascript",
+  "version": "0.0.1",
+  "private": false,
+  "main": "src/index.js",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-babel": "^5.0.0",
+    "gulp-jshint": "^1.9.4",
+    "gulp-rename": "^1.2.0",
+    "gulp-rollup": "^1.0.1",
+    "gulp-uglify": "^1.4.2"
+  }
+}
