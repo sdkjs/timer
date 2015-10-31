@@ -1,9 +1,26 @@
 {
   "name": "task-timer",
   "description": "a human oriented timer for javascript",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "main": "src/index.js",
+  "keywords": [
+    "task",
+    "task-timer",
+    "timer",
+    "setInterval"
+  ],
+  "homepage": "https://github.com/sdkjs/timer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sdkjs/timer"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "simonxu",
+    "email": "xugaofan@dataeye.com",
+    "url": "https://github.com/simongfxu"
+  },
   "devDependencies": {
     "gulp": "^3.8.8",
     "gulp-babel": "^5.0.0",
