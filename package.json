@@ -1,9 +1,8 @@
 {
   "name": "task-timer",
   "description": "a human oriented timer for javascript",
-  "version": "0.0.2",
-  "private": false,
-  "main": "src/index.js",
+  "version": "0.0.3",
+  "main": "dist/timer.src.js",
   "keywords": [
     "task",
     "task-timer",
@@ -28,5 +27,9 @@
     "gulp-rename": "^1.2.0",
     "gulp-rollup": "^1.0.1",
     "gulp-uglify": "^1.4.2"
+  },
+  "scripts": {
+    "build": "gulp",
+    "prepublish": "npm run build"
   }
 }

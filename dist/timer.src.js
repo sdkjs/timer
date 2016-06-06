@@ -3,19 +3,6 @@
 })(this, function () {
   'use strict';
 
-  /**
-   * a human oriented timer for javascript
-   *
-   * var timer = new Timer(func, 2000)
-   * timer.run()
-   * timer.stop()
-   * timer.reset()
-   * timer.reset(1000)
-   * timer.cancel()
-   */
-
-  var CONSTRUCTED = 0;
-
   var STOPPED = 1;
 
   var CANCELLED = 2;
@@ -41,9 +28,6 @@
      */
     this.duration = duration;
     this.status = RUNNING;
-    this.timer = setTimeout(function () {
-      return _this.run();
-    }, this.duration);
 
     // 立即执行一次
     this.run = function () {
@@ -52,9 +36,7 @@
       // 清除上次的定时器
       clearTimeout(_this.timer);
       attempt(fn);
-      _this.timer = setTimeout(function () {
-        return _this.run();
-      }, _this.duration);
+      _this.timer = setTimeout(_this.run, _this.duration);
     };
 
     // 重新设置定时器的轮询周期
@@ -68,6 +50,12 @@
       _this.run();
     };
 
+    this.start = function () {
+      if (_this.status === STOPPED) {
+        setTimeout(_this.run, _this.duration);
+      }
+    };
+
     // 暂停
     this.stop = function () {
       _this.status = STOPPED;
@@ -79,6 +67,8 @@
       this.status = CANCELLED;
       clearTimeout(this.timer);
     };
+
+    this.timer = setTimeout(this.run, this.duration);
   }
 
   return index;

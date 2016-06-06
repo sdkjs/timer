@@ -9,6 +9,7 @@ var timer = new Timer(function() {
 }, 2000)
 
 timer.run()
+timer.start()
 timer.stop()
 timer.reset()
 timer.reset(1000)
